@@ -14,6 +14,12 @@
             }
         </script>
 
+        <script>
+            if (sessionStorage.getItem('skipMainLoading') === 'true') {
+                document.documentElement.classList.add('skip-loading');
+            }
+        </script>
+
         <!-- 공통 css -->
         <link rel="stylesheet" href="asset/css/font.css" />
         <link rel="stylesheet" href="asset/css/reset.css" />
@@ -44,7 +50,7 @@
         </header>
         <!-- //header -->
 
-        <section class="hero fluid-section">
+        <section class="hero fluid-section" id="home">
             <p class="intro-text fluid-target">
                 저의 디자인은 사람들에게<br />
                 시각적인 경험으로 기억에 남아 브랜드와의<br />
@@ -82,53 +88,53 @@
             <div class="work-sticky">
                 <div class="container">
                     <div class="work-grid-wrap">
-                        <a href="#" class="work-card first">
+                        <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card first">
                             <img src="asset/img/work_1.jpg" alt="" />
                         </a>
 
                         <div class="work-grid">
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_15.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_6.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_5.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_8.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_10.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_14.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_2.jpg" alt="" />
                             </a>
 
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_3.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_13.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_12.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_4.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_7.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_9.jpg" alt="" />
                             </a>
-                            <a href="#" class="work-card">
-                                <img src="asset/img/work_1.jpg" alt="" />
+                            <a href="./asset/html/sub.html?tab=work&fromMain=true#work" class="work-card">
+                                <img src="asset/img/work_11.jpg" alt="" />
                             </a>
                         </div>
                     </div>
@@ -284,10 +290,20 @@
             </div>
         </section>
 
-        <section class="video-section" data-fluid-section>
+        <section class="video-section">
             <div class="video-canvas-wrap">
                 <canvas class="video-canvas"></canvas>
-                <a href="#" class="video-view-btn">ALL VIEW</a>
+
+                <video
+                    id="screenVideo"
+                    src="asset/media/portfolio_main_video.mp4"
+                    loop
+                    playsinline
+                    preload="auto"
+                    style="display: none"
+                ></video>
+
+                <a href="./asset/html/sub.html?tab=motion&fromMain=true#work" class="video-view-btn">ALL VIEW</a>
             </div>
         </section>
         <!-- //video -->
@@ -301,10 +317,18 @@
 
                 <div class="archive-project-content">
                     <div class="archive-thumb-list">
-                        <a href="" class="archive-thumb-item"><img src="asset/img/mockup_thum_1.png" alt="" /></a>
-                        <a href="" class="archive-thumb-item"><img src="asset/img/mockup_thum_2.png" alt="" /></a>
-                        <a href="" class="archive-thumb-item"><img src="asset/img/mockup_thum_3.png" alt="" /></a>
-                        <a href="" class="archive-thumb-item"><img src="asset/img/mockup_thum_4.png" alt="" /></a>
+                        <a href="./asset/html/sub.html?tab=artwork&fromMain=true#work" class="archive-thumb-item"
+                            ><img src="asset/img/mockup_thum_1.png" alt=""
+                        /></a>
+                        <a href="./asset/html/sub.html?tab=promotion&fromMain=true#work" class="archive-thumb-item"
+                            ><img src="asset/img/mockup_thum_2.png" alt=""
+                        /></a>
+                        <a href="./asset/html/sub.html?tab=promotion&fromMain=true#work" class="archive-thumb-item"
+                            ><img src="asset/img/mockup_thum_3.png" alt=""
+                        /></a>
+                        <a href="./asset/html/sub.html?tab=web&fromMain=true#work" class="archive-thumb-item"
+                            ><img src="asset/img/mockup_thum_4.png" alt=""
+                        /></a>
                     </div>
 
                     <div class="archive-work-text">
@@ -371,6 +395,17 @@
             </div>
         </section>
         <!-- //contact-section -->
+
+        <div class="scroll-down">
+            <div class="scroll-chevron"></div>
+            <div class="scroll-chevron"></div>
+            <div class="scroll-chevron"></div>
+            <span class="scroll-text">
+                <span>Scroll</span>
+                <span>Down</span>
+            </span>
+        </div>
+        <!-- //scroll-down -->
 
         <script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

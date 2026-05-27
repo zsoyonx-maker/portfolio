@@ -1,11 +1,22 @@
-history.scrollRestoration = "manual";
+const skipMainLoading = sessionStorage.getItem("skipMainLoading") === "true";
+
+history.scrollRestoration = skipMainLoading ? "auto" : "manual";
 
 window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
+    const loader = document.querySelector(".loader");
+
+    if (!skipMainLoading) {
+        window.scrollTo(0, 0);
+    } else {
+        if (loader) {
+            loader.style.display = "none";
+        }
+
+        document.body.style.overflowY = "auto";
+    }
 
     const canvas = document.querySelector("#loader-canvas");
     const counter = document.querySelector(".loader-counter");
-    const loader = document.querySelector(".loader");
     const hero = document.querySelector(".hero");
 
     const flatText = document.createElement("div");
@@ -231,6 +242,39 @@ window.addEventListener("load", () => {
 
     const tl = gsap.timeline();
 
+    if (skipMainLoading) {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+        loader.style.pointerEvents = "none";
+        tl.timeScale(100);
+
+        gsap.set(hero, {
+            opacity: 1,
+            pointerEvents: "auto",
+        });
+
+        gsap.set(".header", {
+            opacity: 1,
+            pointerEvents: "auto",
+        });
+
+        gsap.set(".intro-text, .bottom-text", {
+            opacity: 1,
+            y: 0,
+        });
+
+        document.body.style.overflowX = "hidden";
+        document.body.style.overflowY = "auto";
+
+        fluidReady = true;
+
+        setTimeout(() => {
+            const hash = window.location.hash;
+
+            sessionStorage.removeItem("skipMainLoading");
+        }, 10);
+    }
+
     tl.to(
         { value: 0 },
         {
@@ -307,8 +351,7 @@ window.addEventListener("load", () => {
         loader.style.pointerEvents = "none";
         fluidReady = true;
 
-        // fluidCanvas.style.opacity = "1";
-        // fluidCanvas.style.visibility = "visible";
+        document.querySelector(".scroll-down")?.classList.add("is-show");
     });
 
     tl.to(".word-my", {
@@ -473,36 +516,27 @@ window.addEventListener("scroll", () => {
 });
 
 // fluid
+let fluidReady = false;
+let fluidInitialized = false;
+let fluidVisible = false;
+let fluidBurstRunning = false;
+let fluidScrollTicking = false;
+
 const fluidCanvas = document.getElementById("fluid-canvas");
 
 fluidCanvas.width = window.innerWidth;
 fluidCanvas.height = window.innerHeight;
 
-let eventQueue = [];
+let lastMouseX = window.innerWidth / 2;
+let lastMouseY = window.innerHeight / 2;
 
-function queueEvent(e) {
-    eventQueue.push({
-        type: e.type,
-        clientX: e.clientX,
-        clientY: e.clientY,
-        movementX: e.movementX || 0,
-        movementY: e.movementY || 0,
-        buttons: e.buttons,
-        button: e.button,
-    });
+function saveMousePosition(e) {
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
 }
 
-window.addEventListener("mousemove", queueEvent, {
-    passive: true,
-});
-
-window.addEventListener("mousedown", queueEvent, {
-    passive: true,
-});
-
-window.addEventListener("mouseup", queueEvent, {
-    passive: true,
-});
+window.addEventListener("mousemove", saveMousePosition, { passive: true });
+window.addEventListener("wheel", saveMousePosition, { passive: true });
 
 function initFluid() {
     if (typeof WebGLFluid === "undefined") {
@@ -523,7 +557,7 @@ function initFluid() {
         PRESSURE: 0.2,
         CURL: 3,
 
-        SPLAT_RADIUS: 0.55,
+        SPLAT_RADIUS: 0.5,
         SPLAT_FORCE: 3500,
 
         SHADING: true,
@@ -537,74 +571,10 @@ function initFluid() {
         SUNRAYS: false,
     });
 
-    function relayEvent(data) {
-        fluidCanvas.style.pointerEvents = "auto";
-
-        fluidCanvas.dispatchEvent(
-            new MouseEvent(data.type, {
-                bubbles: false,
-                cancelable: false,
-
-                clientX: data.clientX,
-                clientY: data.clientY,
-
-                movementX: data.movementX,
-                movementY: data.movementY,
-
-                buttons: data.buttons,
-                button: data.button,
-            }),
-        );
-
-        fluidCanvas.style.pointerEvents = "none";
-    }
-
-    setTimeout(() => {
-        eventQueue.forEach(relayEvent);
-
-        eventQueue = [];
-    }, 100);
-
-    window.removeEventListener("mousemove", queueEvent);
-    window.removeEventListener("mousedown", queueEvent);
-    window.removeEventListener("mouseup", queueEvent);
-
-    function liveRelay(e) {
-        relayEvent(e);
-    }
-
-    window.addEventListener("mousemove", liveRelay, {
-        passive: true,
-    });
-
-    window.addEventListener("mousedown", liveRelay, {
-        passive: true,
-    });
-
-    window.addEventListener("mouseup", liveRelay, {
-        passive: true,
-    });
-
-    window.addEventListener("resize", () => {
-        fluidCanvas.width = window.innerWidth;
-        fluidCanvas.height = window.innerHeight;
-    });
+    fluidInitialized = true;
 }
 
 initFluid();
-
-// fluid hover target
-function isMouseOnFluidText(x, y) {
-    const targets = document.querySelectorAll(".flat-word, .fluid-target");
-
-    return Array.from(targets).some((target) => {
-        const rect = target.getBoundingClientRect();
-
-        return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
-    });
-}
-
-let fluidVisible = false;
 
 function setFluidVisible(show) {
     if (fluidVisible === show) return;
@@ -616,14 +586,14 @@ function setFluidVisible(show) {
 
         gsap.to(fluidCanvas, {
             opacity: 1,
-            duration: 0.45,
+            duration: 0.35,
             ease: "power2.out",
             overwrite: true,
         });
     } else {
         gsap.to(fluidCanvas, {
             opacity: 0,
-            duration: 0.5,
+            duration: 0.45,
             ease: "power2.out",
             overwrite: true,
             onComplete: () => {
@@ -635,36 +605,120 @@ function setFluidVisible(show) {
     }
 }
 
-window.addEventListener("mousemove", (e) => {
+function getFluidTarget(x, y) {
     const targets = document.querySelectorAll(".flat-word, .fluid-target");
 
-    const target = Array.from(targets).find((el) => {
-        const rect = el.getBoundingClientRect();
+    const matched = Array.from(targets)
+        .map((el) => {
+            const rect = el.getBoundingClientRect();
+            const padding = 300;
 
-        return e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
-    });
+            const inArea =
+                x >= rect.left - padding &&
+                x <= rect.right + padding &&
+                y >= rect.top - padding &&
+                y <= rect.bottom + padding;
 
-    if (!fluidReady || !target) {
-        setFluidVisible(false);
-        return;
-    }
+            if (!inArea) return null;
 
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const distance = Math.hypot(x - centerX, y - centerY);
+
+            return { el, distance };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.distance - b.distance);
+
+    return matched[0]?.el || null;
+}
+
+function applyFluidClip(target) {
     const clipType = target.dataset.fluidClip;
 
     if (clipType === "target-bottom") {
         const rect = target.getBoundingClientRect();
-
         fluidCanvas.style.clipPath = `inset(0px 0px ${window.innerHeight - rect.bottom - 8}px 0px)`;
-    } else if (clipType === "section") {
-        const section = target.closest("[data-fluid-section]");
-        const sectionRect = section.getBoundingClientRect();
-
-        fluidCanvas.style.clipPath = `inset(${sectionRect.top}px 0px ${window.innerHeight - sectionRect.bottom}px 0px)`;
-    } else {
-        fluidCanvas.style.clipPath = "none";
+        return;
     }
 
+    if (clipType === "section") {
+        const section = target.closest("[data-fluid-section]");
+
+        if (section) {
+            const sectionRect = section.getBoundingClientRect();
+            fluidCanvas.style.clipPath = `inset(${sectionRect.top}px 0px ${window.innerHeight - sectionRect.bottom}px 0px)`;
+            return;
+        }
+    }
+
+    fluidCanvas.style.clipPath = "none";
+}
+
+function fireFluidBurst(x, y) {
+    if (fluidBurstRunning) return;
+
+    fluidBurstRunning = true;
+
+    let burst = 0;
+
+    function fire() {
+        burst++;
+
+        const moveEvent = new MouseEvent("mousemove", {
+            clientX: x + burst * 3,
+            clientY: y + burst * 4,
+            movementX: 8,
+            movementY: 12,
+            buttons: 0,
+            bubbles: true,
+            cancelable: true,
+        });
+
+        fluidCanvas.style.pointerEvents = "auto";
+        fluidCanvas.dispatchEvent(moveEvent);
+        fluidCanvas.style.pointerEvents = "none";
+
+        if (burst < 3) {
+            requestAnimationFrame(fire);
+        } else {
+            fluidBurstRunning = false;
+        }
+    }
+
+    fire();
+}
+
+function updateFluidByPosition() {
+    const target = getFluidTarget(lastMouseX, lastMouseY);
+
+    if (!fluidReady || !fluidInitialized || !target) {
+        setFluidVisible(false);
+        return;
+    }
+
+    applyFluidClip(target);
     setFluidVisible(true);
+    fireFluidBurst(lastMouseX, lastMouseY);
+}
+
+window.addEventListener("mousemove", updateFluidByPosition);
+
+window.addEventListener("scroll", () => {
+    if (fluidScrollTicking) return;
+
+    fluidScrollTicking = true;
+
+    requestAnimationFrame(() => {
+        updateFluidByPosition();
+        fluidScrollTicking = false;
+    });
+});
+
+window.addEventListener("resize", () => {
+    fluidCanvas.width = window.innerWidth;
+    fluidCanvas.height = window.innerHeight;
 });
 
 // work 영역
@@ -1097,3 +1151,43 @@ if (contactSection) {
 
     contactObserver.observe(contactSection);
 }
+
+// scroll-down
+const scrollDown = document.querySelector(".scroll-down");
+
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const windowH = window.innerHeight;
+    const documentH = document.documentElement.scrollHeight;
+
+    const isBottom = scrollTop + windowH >= documentH - 10;
+
+    if (isBottom) {
+        scrollDown.classList.add("is-hide");
+    } else {
+        scrollDown.classList.remove("is-hide");
+    }
+});
+
+const videoSection = document.querySelector(".video-section");
+
+function updateScrollDownColor() {
+    if (!scrollDown || !videoSection) return;
+
+    const rect = videoSection.getBoundingClientRect();
+
+    const scrollDownCenterY = scrollDown.getBoundingClientRect().top + scrollDown.getBoundingClientRect().height / 2;
+
+    const isInsideVideo = scrollDownCenterY >= rect.top && scrollDownCenterY <= rect.bottom;
+
+    if (isInsideVideo) {
+        scrollDown.classList.add("is-white");
+    } else {
+        scrollDown.classList.remove("is-white");
+    }
+}
+
+window.addEventListener("scroll", updateScrollDownColor);
+window.addEventListener("resize", updateScrollDownColor);
+
+updateScrollDownColor();

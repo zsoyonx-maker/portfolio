@@ -1,0 +1,1235 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PORTFOLIO_임우용</title>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+                }
+            }
+        </script>
+
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="../css/font.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/sub.css" />
+    </head>
+    <body class="is-tab-loading">
+        <canvas id="fluid-canvas"></canvas>
+        <!-- //fluid -->
+
+        <header class="header">
+            <div class="header-inner">
+                <a href="../../index.html#home" class="logo">HOME</a>
+
+                <nav class="gnb">
+                    <a href="../../index.html#work">WORK</a>
+                    <a href="../../index.html#about">ABOUT</a>
+                    <a href="../../index.html#archive">ARCHIVE</a>
+                    <a href="../../index.html#contact">CONTACT</a>
+                </nav>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <div id="work" class="tab-visual is-show" data-content="work">
+            <section class="sub-visual-section">
+                <div class="container">
+                    <div class="sub-title-row">
+                        <div class="sub-title-left">
+                            <h1 class="fluid-target" data-fluid-clip="target">Designing Brand Value</h1>
+
+                            <p class="fluid-target" data-fluid-clip="target">
+                                브랜드가 가진 가치와 제품의 강점을 효과적으로 전달하기 위해<br />
+                                사용자 경험과 콘텐츠 흐름, 정보 전달 구조를 고려하여<br />
+                                비주얼 디자인을 중심으로 제작한 다양한 실무 프로젝트입니다.
+                            </p>
+                        </div>
+
+                        <div class="sub-title-right">
+                            <p class="sub-category fluid-target" data-fluid-clip="target">Commercial Works</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //work title -->
+
+        <div class="tab-visual" data-content="common">
+            <section class="sub-visual-section">
+                <div class="container">
+                    <div class="sub-title-row">
+                        <div class="sub-title-left">
+                            <h1 class="fluid-target" data-fluid-clip="target">Expanding Creative Boundaries</h1>
+
+                            <p class="fluid-target" data-fluid-clip="target">
+                                생성형 AI와 프론트엔드 기반의 다양한 경험을 통해<br />
+                                비주얼 디자인과 인터랙션, 콘텐츠 흐름과 사용자 경험까지 유기적으로 연결하며<br />
+                                실험과 탐색의 과정을 시각적으로 풀어낸 프로젝트입니다.
+                            </p>
+                        </div>
+
+                        <div class="sub-title-right">
+                            <p class="sub-category fluid-target" data-fluid-clip="target">Experimental Works</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //promotion-artwork title -->
+
+        <section class="sub-tab-section">
+            <div class="container">
+                <div class="sub_tab">
+                    <ul>
+                        <li><a href="#" class="is-active" data-tab="work">WORK</a></li>
+                        <li><a href="#" data-tab="promotion">PROMOTION DESIGN</a></li>
+                        <li><a href="#" data-tab="motion">MOTION GRAPHICS</a></li>
+                        <li><a href="#" data-tab="web">WEB</a></li>
+                        <li><a href="#" data-tab="artwork">ARTWORK</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- //sub tab -->
+
+        <div class="tab-work is-show" data-content="work">
+            <section class="sub-work-section">
+                <div class="container">
+                    <div class="sub-work-list">
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_1/work_1_1.jpg, ../img/sub_work/work_1/work_1_2.jpg, ../img/sub_work/work_1/work_1_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #4fb7f3, #6ecbff, #9edfff, #cfe8ff, #f3fbff"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_1/work_1thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2024. 06 / 상세페이지</p>
+
+                            <h3>닥터윤 x 루체떼 유황온천 비누</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_2/work_2_1.jpg, ../img/sub_work/work_2/work_2_2.jpg, ../img/sub_work/work_2/work_2_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #ff7b1c, #ff9a3d, #ffb357, #ffd08a, #fff1d6"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_2/work_2thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2024. 01 / 상세페이지</p>
+
+                            <h3>힐렌 UV 쉴드 선크림</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_3/work_3_1.jpg, ../img/sub_work/work_3/work_3_2.jpg, ../img/sub_work/work_3/work_3_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #5fd3ff, #7fdcff, #a7e8ff, #cfefff, #eefbff"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_3/work_3thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2024. 05 / 상세페이지</p>
+
+                            <h3>힐렌 임바이비션 미스트</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_4/work_4_1.jpg, ../img/sub_work/work_4/work_4_2.jpg, ../img/sub_work/work_4/work_4_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #5f8a1f, #7fb52d, #a3d64b, #d2f28d, #f4ffe2"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_4/work_4thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2023. 03 / 상세페이지</p>
+
+                            <h3>알로에팜 유기농 알로에 겔 3종</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb modal-four"
+                                data-images="../img/sub_work/work_5/work_5_1.jpg, ../img/sub_work/work_5/work_5_2.jpg, ../img/sub_work/work_5/work_5_3.jpg, ../img/sub_work/work_5/work_5_4.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #ff8fc7, #ffb3d9, #ffd3e9, #ffeaf5, #fff8fc"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_5/work_5thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2023. 04 / 상세페이지</p>
+
+                            <h3>플러스에어 프로 H30 헤어드라이기</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_6/work_6_1.jpg, ../img/sub_work/work_6/work_6_2.jpg, ../img/sub_work/work_6/work_6_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #d87d8c, #eea4b1, #f8c7d1, #ffe2e7, #fff8f9"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_6/work_6thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 06 / 상세페이지</p>
+
+                            <h3>압토솔 압토스팟 프로 12% 피부박피</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_7/work_7_1.jpg, ../img/sub_work/work_7/work_7_2.jpg, ../img/sub_work/work_7/work_7_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #b51f38, #d6465f, #f08ca0, #ffc3cf, #fff0f3"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_7/work_7thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 07 / 상세페이지</p>
+
+                            <h3>압토솔 선스크린</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_8/work_8_1.jpg, ../img/sub_work/work_8/work_8_2.jpg, ../img/sub_work/work_8/work_8_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #4f82df, #76a3f0, #a8c6ff, #d6e5ff, #f5f9ff"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_8/work_8thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 10 / 상세페이지</p>
+
+                            <h3>네이쳐스탑 IBM 포스파티딜세린</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-image="../img/sub_work/work_9/work_9_1.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #63d4c8, #8be4da, #b8f0ea, #dcfaf6, #f5fffd"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_9/work_9thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 05 / 상세페이지 후킹</p>
+
+                            <h3>비버그라운드 진동폼롤러</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-image="../img/sub_work/work_10/work_10_1.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #76a3ea, #a3c3f5, #cfe2ff, #ebf4ff, #ffffff"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_10/work_10thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2023. 06 / 이벤트페이지</p>
+
+                            <h3>아나셀 헤어 앰플</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_11/work_11_1.jpg, ../img/sub_work/work_11/work_11_2.jpg, ../img/sub_work/work_11/work_11_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #f58ea1, #fdb1be, #ffd1d9, #ffe8ec, #fff7f8"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_11/work_11thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 03 / 상세페이지</p>
+
+                            <h3>썬레이닥터 솔라 히팅시트</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-image="../img/sub_work/work_12/work_12_1.jpg"
+                                data-modal="large"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #5ea9ff, #8fc7ff, #bee0ff, #e5f3ff, #ffffff"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_12/work_12thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 06 / 상세페이지</p>
+
+                            <h3>관절몰 매스틱검</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_13/work_13_1.jpg, ../img/sub_work/work_13/work_13_2.jpg, ../img/sub_work/work_13/work_13_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #5fc2ff, #8fd8ff, #c2ebff, #eef9ff, #ffffff"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_13/work_13thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 06 / 상세페이지</p>
+
+                            <h3>관절몰 MBP 유단백추출물정</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_14/work_14_1.jpg, ../img/sub_work/work_14/work_14_2.jpg, ../img/sub_work/work_14/work_14_3.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #5c3a2c, #7b5241, #a0715c, #d1b2a1, #f5e7df"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_14/work_14thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 04 / 상세페이지</p>
+
+                            <h3>에스더 해빙 블렌드 드립백</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-image="../img/sub_work/work_15/work_15_1.gif"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #5a4a50, #866c75, #b89ca5, #e3d1d6, #fff4f6"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_15/work_15thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 08 / 상세페이지 GIF</p>
+
+                            <h3>비기너스럭 흑채</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-image="../img/sub_work/work_11/work_16_1.gif"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #9f918b, #b9aba5, #d6cbc6, #efe7e3, #fffaf7"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_11/work_16thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 04 / 상세페이지 GIF</p>
+
+                            <h3>썬레이닥터 솔라 히팅시트</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-images="../img/sub_work/work_5/work_5_5.gif, ../img/sub_work/work_5/work_5_6.gif, ../img/sub_work/work_5/work_5_7.gif, ../img/sub_work/work_5/work_5_8.gif, ../img/sub_work/work_5/work_5_9.gif, ../img/sub_work/work_5/work_5_10.gif, ../img/sub_work/work_5/work_5_11.gif, ../img/sub_work/work_5/work_5_12.gif"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #f857aa, #ff86c5, #ffbfe0, #ffe5f3, #ffffff"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_5/work_17thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2023. 04 / 상세페이지 GIF</p>
+
+                            <h3>플러스에어 프로 H30 헤어드라이기</h3>
+                        </div>
+
+                        <div class="sub-work-card">
+                            <a
+                                href="#"
+                                class="sub-work-thumb modal-thumb"
+                                data-image="../img/sub_work/work_18/work_18_1.jpg"
+                            >
+                                <div
+                                    class="shine-card"
+                                    style="--shine-colors: #cdb27f, #e3cfab, #f3e6cf, #d6e5d0, #fffef9"
+                                >
+                                    <div class="shine-border"></div>
+
+                                    <div class="shine-inner">
+                                        <img src="../img/sub_work/work_18/work_18thum.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+
+                            <p class="work-meta">2022. 04 / 이벤트페이지</p>
+
+                            <h3>알렉산더킴스코 로얄 비비크림</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- sub work -->
+
+        <div class="tab-work" data-content="promotion">
+            <section class="sub-promotion-section">
+                <div class="container">
+                    <div class="sub-promotion-list">
+                        <!-- 01 -->
+                        <div class="promotion-item">
+                            <img
+                                class="promotion-img"
+                                src="../img/sub_promotion/event_1.png"
+                                alt="비플레인 이벤트 페이지"
+                            />
+
+                            <div class="promotion-info">
+                                <h3>비플레인 이벤트 페이지</h3>
+
+                                <a
+                                    href="#"
+                                    class="promotion-more modal-thumb"
+                                    data-image="../img/sub_promotion/event_modal_1.jpg"
+                                    data-modal="large"
+                                >
+                                    자세히 보기
+                                </a>
+
+                                <p class="promotion-desc">
+                                    비플레인의 대표 원료인 녹두에서 착안한 그린 컬러를 활용하여 브랜드 아이덴티티를<br />
+                                    강조했으며, 라운지 회원을 대상으로 프로모션 혜택, 상품 할인, 사은품 증정 등
+                                    다양한<br />
+                                    이벤트 콘텐츠를 직관적으로 구성한 프로모션 페이지입니다.
+                                </p>
+
+                                <div class="promotion-color">
+                                    <h4>Color</h4>
+
+                                    <div class="color-list">
+                                        <div class="color-item">
+                                            <span style="--color: #2c850f"></span>
+                                            <p>#2C850F</p>
+                                        </div>
+                                        <div class="color-item">
+                                            <span style="--color: #32d32d"></span>
+                                            <p>#32D32D</p>
+                                        </div>
+                                        <div class="color-item">
+                                            <span style="--color: #73ce6e"></span>
+                                            <p>#73CE6E</p>
+                                        </div>
+                                        <div class="color-item">
+                                            <span style="--color: #daf7d9"></span>
+                                            <p>#DAF7D9</p>
+                                        </div>
+                                        <div class="color-item">
+                                            <span style="--color: #f2f3f7"></span>
+                                            <p>#F2F3F7</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="promotion-tool">
+                                    <h4>Use Tool</h4>
+                                    <img src="../img/sub_promotion/Photoshop_icon.png" alt="Photoshop" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 02 -->
+                        <div class="promotion-item">
+                            <img
+                                class="promotion-img"
+                                src="../img/sub_promotion/banner_1.png"
+                                alt="트루엔 RTG오메가3 배너디자인"
+                            />
+
+                            <div class="promotion-info">
+                                <h3>트루엔 RTG오메가3 배너디자인</h3>
+
+                                <a
+                                    href="#"
+                                    class="promotion-more modal-thumb"
+                                    data-image="../img/sub_promotion/banner_modal_1.jpg"
+                                >
+                                    자세히 보기
+                                </a>
+
+                                <p class="promotion-desc">
+                                    제품과 브랜드 아이덴티티를 효과적으로 전달하기 위해 패키지의 블루 컬러를 메인<br />
+                                    무드로 활용하고, 원료의 특징을 시각적으로 연결하기 위해 수중 속 생선과 흐르는<br />
+                                    물결 요소를 함께 구성하여 제품의 신뢰감과 청량한 이미지를 강조하였습니다.
+                                </p>
+
+                                <div class="promotion-bottom">
+                                    <div class="promotion-color">
+                                        <h4>Color</h4>
+
+                                        <div class="color-list color-list-small">
+                                            <div class="color-item">
+                                                <span style="--color: #0078ff"></span>
+                                                <p>#0078FF</p>
+                                            </div>
+                                            <div class="color-item">
+                                                <span style="--color: #8fd4e9"></span>
+                                                <p>#8FD4E9</p>
+                                            </div>
+                                            <div class="color-item">
+                                                <span style="--color: #eaf0ff"></span>
+                                                <p>#EAF0FF</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="promotion-tool promotion-tool-inline">
+                                        <h4>Use Tool</h4>
+                                        <img src="../img/sub_promotion/Photoshop_icon.png" alt="Photoshop" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 03 -->
+                        <div class="promotion-item">
+                            <img
+                                class="promotion-img"
+                                src="../img/sub_promotion/banner_2.png"
+                                alt="트루엔 초임계 RTG오메가3 배너디자인"
+                            />
+
+                            <div class="promotion-info">
+                                <h3>트루엔 초임계 RTG오메가3 배너디자인</h3>
+
+                                <a
+                                    href="#"
+                                    class="promotion-more modal-thumb"
+                                    data-image="../img/sub_promotion/banner_modal_2.jpg"
+                                >
+                                    자세히 보기
+                                </a>
+
+                                <p class="promotion-desc">
+                                    초임계 추출 방식의 특징인 높은 흡수율을 수중 속 생선이 빨려 들어가는 듯한<br />
+                                    움직임과 물결 연출을 통해 유동적인 흐름 중심의 비주얼로 구성했으며,<br />
+                                    패키지색인 민트 계열 컬러를 사용하여 깨끗한 이미지를 강조했습니다.
+                                </p>
+
+                                <div class="promotion-bottom">
+                                    <div class="promotion-color">
+                                        <h4>Color</h4>
+
+                                        <div class="color-list color-list-small">
+                                            <div class="color-item">
+                                                <span style="--color: #13a39b"></span>
+                                                <p>#13A39B</p>
+                                            </div>
+                                            <div class="color-item">
+                                                <span style="--color: #8fe9d1"></span>
+                                                <p>#8FE9D1</p>
+                                            </div>
+                                            <div class="color-item">
+                                                <span style="--color: #e3fff9"></span>
+                                                <p>#E3FFF9</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="promotion-tool promotion-tool-inline">
+                                        <h4>Use Tool</h4>
+                                        <img src="../img/sub_promotion/Photoshop_icon.png" alt="Photoshop" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 04 -->
+                        <div class="promotion-item">
+                            <img
+                                class="promotion-img"
+                                src="../img/sub_promotion/banner_3.png"
+                                alt="트루엔 오엠비 배너디자인"
+                            />
+
+                            <div class="promotion-info">
+                                <h3>트루엔 오엠비 배너디자인</h3>
+
+                                <a
+                                    href="#"
+                                    class="promotion-more modal-thumb"
+                                    data-image="../img/sub_promotion/banner_modal_3.jpg"
+                                >
+                                    자세히 보기
+                                </a>
+
+                                <p class="promotion-desc">
+                                    복합 기능성 제품의 특성을 시각적으로 표현하기 위해 원소 및 기호 구조에서 착안한<br />
+                                    디자인 요소를 활용하여 기능성과 영양 밸런스를 현대적인 방식으로 풀어냈으며,<br />
+                                    패키지의 보라 계열 컬러를 중심으로 안정감 있고 전문적인 무드를 구성하였습니다.
+                                </p>
+
+                                <div class="promotion-bottom">
+                                    <div class="promotion-color">
+                                        <h4>Color</h4>
+
+                                        <div class="color-list color-list-small">
+                                            <div class="color-item">
+                                                <span style="--color: #7c6ddf"></span>
+                                                <p>#7C6DDF</p>
+                                            </div>
+                                            <div class="color-item">
+                                                <span style="--color: #627ad6"></span>
+                                                <p>#627AD6</p>
+                                            </div>
+                                            <div class="color-item">
+                                                <span style="--color: #e2e8ff"></span>
+                                                <p>#E2E8FF</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="promotion-tool promotion-tool-inline">
+                                        <h4>Use Tool</h4>
+                                        <img src="../img/sub_promotion/Photoshop_icon.png" alt="Photoshop" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //promotion -->
+
+        <div class="tab-work" data-content="motion">
+            <section class="sub-motion-section">
+                <div class="container">
+                    <div class="sub-motion-list">
+                        <div class="motion-item">
+                            <div class="motion-card">
+                                <img class="motion-thumb" src="../img/sub_motion/motion_thum_1.png" alt="" />
+
+                                <div class="motion-content">
+                                    <a
+                                        href="#"
+                                        class="motion-more modal-thumb"
+                                        data-drive="https://drive.google.com/file/d/1y5l41kNA-Agn3prEapu__ivNgpA-Rcyp/preview"
+                                    >
+                                        풀영상 보기
+                                    </a>
+
+                                    <h3>Project Info</h3>
+
+                                    <p>
+                                        스우파3 우승팀 오사카 오죠갱의 전국 투어 콘서트를 주제로<br />
+                                        스트릿 무드의 타이포 애니메이션과 글리치 효과를 활용하여<br />
+                                        강렬한 에너지와 팀의 아이덴티티를 표현한 모션그래픽<br />
+                                        광고 영상입니다.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="motion-info">
+                                <h2 class="motion-project-title">오사카 오죠갱 콘서트 광고 영상</h2>
+
+                                <h3>Creative Intent</h3>
+                                <p>
+                                    스우파3 우승팀 오사카 오죠갱의 강렬한 퍼포먼스와 높은 팬덤의 관심도를 기반으로 국내
+                                    콘서트 프로모션 영상을<br />
+                                    기획했습니다. 팀의 메인 컬러인 그린 계열을 중심으로 타이포 애니메이션, 글리치 효과,
+                                    프리즈 프레임 연출 등을<br />
+                                    활용하여 스트릿 무드와 공연의 에너지를 직관적으로 표현했습니다.
+                                </p>
+
+                                <h3>Keyword</h3>
+                                <div class="motion-keywords">
+                                    <span>#스트릿댄스</span>
+                                    <span>#타이포애니메이션</span>
+                                    <span>#글리치효과</span>
+                                    <span>#프리즈프레임</span>
+                                    <span>#콘서트광고</span>
+                                    <span>#스우파3</span>
+                                    <span>#오죠갱</span>
+                                    <span>#모션그래픽</span>
+                                </div>
+
+                                <h3>Motion Point</h3>
+                                <ul>
+                                    <li>빠른 컷 편집과 타이포 애니메이션을 활용한 리듬감 있는 구성</li>
+                                    <li>글리치 효과와 프리즈 프레임을 이용한 스트릿 무드 연출</li>
+                                    <li>로고 등장 시 강한 임팩트와 에너지 확산 효과 적용</li>
+                                    <li>팀의 메인 컬러인 녹색 계열을 중심으로 전체 톤앤매너 통일</li>
+                                </ul>
+
+                                <h3>Use Tool</h3>
+                                <div class="motion-tools">
+                                    <img src="../img/sub_motion/Photoshop.png" alt="Photoshop" />
+                                    <img src="../img/sub_motion/After Effects.png" alt="After Effects" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="motion-item">
+                            <div class="motion-card">
+                                <img class="motion-thumb" src="../img/sub_motion/motion_thum_2.png" alt="" />
+
+                                <div class="motion-content">
+                                    <a
+                                        href="#"
+                                        class="motion-more modal-thumb"
+                                        data-drive="https://drive.google.com/file/d/1b4jSKJEivfMiHu-kPnPtMB_rRYcGTYGF/preview"
+                                    >
+                                        풀영상 보기
+                                    </a>
+
+                                    <h3>Project Info</h3>
+
+                                    <p>
+                                        발렌티노 쇼에서 BTS 슈가의 스타일링과 현장 무드를 기반으로<br />
+                                        패션 매거진 티저 형식의 인트로 영상을 제작한 프로젝트입니다.<br />
+                                        짧은 러닝타임 안에서 시선을 집중시킬 수 있도록 다이나믹한<br />
+                                        편집과 그래픽 구성 중심의 영상입니다.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="motion-info">
+                                <h2 class="motion-project-title">마리끌레르 매거진 티저 인트로 영상</h2>
+
+                                <h3>Creative Intent</h3>
+                                <p>
+                                    발렌티노의 럭셔리한 패션 무드와 마리끌레르의 매거진 감성을 기반으로 하나의 영상
+                                    안에서 자연스럽게 연결하는 데<br />
+                                    중점을 두고 제작했습니다. 단순한 쇼 스케치 편집이 아닌, 화보와 패션 필름 사이의
+                                    분위기를 표현하기 위해 다이나믹<br />
+                                    텍스트 오프너와 빠른 장면 전환을 중심으로 구성했으며, 세련된 패션 프로모션 무드를
+                                    전달하고자 했습니다.
+                                </p>
+
+                                <h3>Keyword</h3>
+                                <div class="motion-keywords">
+                                    <span>#패션필름</span>
+                                    <span>#타이포애니메이션</span>
+                                    <span>#다이나믹오프너</span>
+                                    <span>#발렌티노</span>
+                                    <span>#마리끌레르</span>
+                                    <span>#BTS슈가</span>
+                                    <span>#패션프로모션</span>
+                                    <span>#매거진무드</span>
+                                </div>
+
+                                <h3>Motion Point</h3>
+                                <ul>
+                                    <li>다이나믹 텍스트 오프너 기반의 타이포 애니메이션 구성</li>
+                                    <li>빠른 장면 전환을 활용한 패션 필름 스타일 연출</li>
+                                    <li>매거진 화보 느낌의 레이아웃과 그래픽 무드 표현</li>
+                                    <li>짧은 러닝타임 안에서 속도감과 집중도를 높인 편집 구성</li>
+                                </ul>
+
+                                <h3>Use Tool</h3>
+                                <div class="motion-tools">
+                                    <img src="../img/sub_motion/After Effects.png" alt="After Effects" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="motion-item">
+                            <div class="motion-card">
+                                <img class="motion-thumb" src="../img/sub_motion/motion_thum_3.png" alt="" />
+
+                                <div class="motion-content">
+                                    <a
+                                        href="#"
+                                        class="motion-more modal-thumb"
+                                        data-drive="https://drive.google.com/file/d/1rBZOMeiCU21LpdEDmO2J8nLZKWTEKBfj/preview"
+                                    >
+                                        풀영상 보기
+                                    </a>
+
+                                    <h3>Project Info</h3>
+
+                                    <p>
+                                        10CM의 너에게 닿기를 노래를 기반으로 20대 청춘의 불안과<br />
+                                        외로움, 그리고 친구를 통한 위로와 회복을 시네마틱 영상으로<br />
+                                        제작한 팀 프로젝트입니다. 감정의 흐름이 자연스럽게 전달될 수<br />
+                                        있도록 감성적인 편집을 중심으로 작업한 영상입니다.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="motion-info">
+                                <h2 class="motion-project-title">너에게 닿기를 MV 시네마틱 영상</h2>
+
+                                <h3>Creative Intent</h3>
+                                <p>
+                                    반복되는 일상 속에서 점점 지쳐가는 20대의 감정을 한 사람의 시선과 감정 흐름을
+                                    따라가며 담아내는 데 집중했습니다.<br />
+                                    단순한 뮤직비디오 형식보다는 현실적인 청춘의 분위기와 공감을 전달하기 위해 푸른톤
+                                    중심의 컬러와 독립영화 무드의<br />
+                                    연출을 활용했으며, 후반부로 갈수록 따뜻한 감정과 위로가 자연스럽게 느껴질 수 있도록
+                                    구성했습니다.
+                                </p>
+
+                                <h3>Keyword</h3>
+                                <div class="motion-keywords motion-keywords-cinema">
+                                    <div class="keyword-row">
+                                        <span>#시네마틱영상</span>
+                                        <span>#뮤직비디오</span>
+                                        <span>#감성연출</span>
+                                        <span>#독립영화무드</span>
+                                    </div>
+
+                                    <div class="keyword-row">
+                                        <span>#푸른톤무드</span>
+                                        <span>#20대청춘</span>
+                                        <span>#감정서사</span>
+                                        <span>#10CM</span>
+                                    </div>
+                                </div>
+
+                                <h3>Motion Point</h3>
+                                <ul>
+                                    <li>푸른톤 컬러 그레이딩 기반의 감성적인 무드 구성</li>
+                                    <li>어두운 분위기에서 점차 밝아지는 감정 흐름 연출</li>
+                                    <li>인물 중심의 1인 촬영과 시네마틱 카메라 무빙 활용</li>
+                                    <li>후반부 친구들의 등장으로 위로와 회복의 감정 강조</li>
+                                </ul>
+
+                                <h3>Use Tool</h3>
+                                <div class="motion-tools">
+                                    <img src="../img/sub_motion/After Effects.png" alt="After Effects" />
+                                    <img src="../img/sub_motion/Premier Pro.png" alt="Premiere Pro" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //motion -->
+
+        <div class="tab-work" data-content="web">
+            <section class="web-work-section">
+                <div class="container">
+                    <div class="web-work-inner">
+                        <article class="web-work-item">
+                            <div class="web-work-img">
+                                <img src="../img/sub_web/web_1.png" alt="NFNL 맛집 가이드 사이트" />
+                            </div>
+
+                            <div class="web-work-info">
+                                <h3>NFNL 맛집 가이드 사이트</h3>
+
+                                <a
+                                    href="https://zsoyonx-maker.github.io/NFNL_teamproject/"
+                                    target="_blank"
+                                    class="web-site-btn"
+                                >
+                                    사이트 보기
+                                </a>
+
+                                <p class="web-work-desc">
+                                    수많은 정보 속 냉정한 선별을 통해 진짜 맛집만을 소개하기 위해 제작한 사이트로<br />
+                                    맛집 킬러라는 콘셉트를 가지고 이용자들의 귀한 시간을 지키며,<br />
+                                    실패 없는 한 끼를 위해 최상의 맛을 가려내어 맛집 정보를 제공하는 사이트입니다.
+                                </p>
+
+                                <div class="web-info-title">Color</div>
+
+                                <div class="web-color-list">
+                                    <div class="web-color-item">
+                                        <span style="background-color: #e00000"></span>
+                                        <em>#E00000</em>
+                                    </div>
+                                    <div class="web-color-item">
+                                        <span style="background-color: #101010"></span>
+                                        <em>#101010</em>
+                                    </div>
+                                    <div class="web-color-item">
+                                        <span style="background-color: #ffffff"></span>
+                                        <em>#FFFFFF</em>
+                                    </div>
+                                </div>
+
+                                <div class="web-info-title web-tool-title">Use Tool</div>
+
+                                <div class="web-tool-list">
+                                    <img src="../img/sub_web/Photoshop.png" alt="Photoshop" />
+                                    <img src="../img/sub_web/Figma.png" alt="Figma" />
+                                    <img src="../img/sub_web/VSCode.png" alt="VSCode" />
+                                    <img src="../img/sub_web/html.png" alt="HTML" />
+                                    <img src="../img/sub_web/css.png" alt="CSS" />
+                                    <img src="../img/sub_web/JavaScript.png" alt="JavaScript" />
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="web-work-item">
+                            <div class="web-work-img">
+                                <img src="../img/sub_web/web_2.png" alt="MEGABOX 사이트" />
+                            </div>
+
+                            <div class="web-work-info">
+                                <h3>MEGABOX 사이트</h3>
+
+                                <a
+                                    href="https://zsoyonx-maker.github.io/Movie-Site/"
+                                    target="_blank"
+                                    class="web-site-btn"
+                                >
+                                    사이트 보기
+                                </a>
+
+                                <p class="web-work-desc">
+                                    메가박스 영화 예매 사이트를 클론코딩한 프로젝트로 반응형 레이아웃과 Swiper<br />
+                                    슬라이드, 모달 등 다양한 인터랙션 기능을 구현하며 기존 메가박스 사이트를 참고해<br />
+                                    Figma로 UI를 설계한 뒤 퍼블리싱한 프로젝트입니다.
+                                </p>
+
+                                <div class="web-info-title">Color</div>
+
+                                <div class="web-color-list">
+                                    <div class="web-color-item">
+                                        <span style="background-color: #38116a"></span>
+                                        <em>#38116a</em>
+                                    </div>
+                                    <div class="web-color-item">
+                                        <span style="background-color: #e3d3f9"></span>
+                                        <em>#e3d3f9</em>
+                                    </div>
+                                    <div class="web-color-item">
+                                        <span style="background-color: #222222"></span>
+                                        <em>#222222</em>
+                                    </div>
+                                    <div class="web-color-item">
+                                        <span style="background-color: #666666"></span>
+                                        <em>#666666</em>
+                                    </div>
+                                </div>
+
+                                <div class="web-info-title web-tool-title">Use Tool</div>
+
+                                <div class="web-tool-list">
+                                    <img src="../img/sub_web/Figma.png" alt="Figma" />
+                                    <img src="../img/sub_web/VSCode.png" alt="VSCode" />
+                                    <img src="../img/sub_web/html.png" alt="HTML" />
+                                    <img src="../img/sub_web/css.png" alt="CSS" />
+                                    <img src="../img/sub_web/JavaScript.png" alt="JavaScript" />
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="web-work-item">
+                            <div class="web-work-img">
+                                <img src="../img/sub_web/web_3.png" alt="DELTA 항공 사이트" />
+                            </div>
+
+                            <div class="web-work-info">
+                                <h3>DELTA 항공 사이트</h3>
+
+                                <a href="https://zsoyonx-maker.github.io/Delta/" target="_blank" class="web-site-btn">
+                                    사이트 보기
+                                </a>
+
+                                <p class="web-work-desc">
+                                    델타항공 공식 사이트를 참고하여 제작한 클론코딩 프로젝트로 반응형 레이아웃과<br />
+                                    메인 비주얼 슬라이드, 인터랙션 요소 등을 구현하며 항공 브랜드 특유의 깔끔하고<br />
+                                    신뢰감 있는 UI 흐름을 중심으로 퍼블리싱한 웹 프로젝트입니다.
+                                </p>
+
+                                <div class="web-info-title">Color</div>
+
+                                <div class="web-color-list">
+                                    <div class="web-color-item">
+                                        <span style="background-color: #001932"></span>
+                                        <em>#001932</em>
+                                    </div>
+                                    <div class="web-color-item">
+                                        <span style="background-color: #ba0707"></span>
+                                        <em>#BA0707</em>
+                                    </div>
+                                    <div class="web-color-item">
+                                        <span style="background-color: #ffffff"></span>
+                                        <em>#ffffff</em>
+                                    </div>
+                                </div>
+
+                                <div class="web-info-title web-tool-title">Use Tool</div>
+
+                                <div class="web-tool-list">
+                                    <img src="../img/sub_web/Figma.png" alt="Figma" />
+                                    <img src="../img/sub_web/VSCode.png" alt="VSCode" />
+                                    <img src="../img/sub_web/html.png" alt="HTML" />
+                                    <img src="../img/sub_web/css.png" alt="CSS" />
+                                    <img src="../img/sub_web/JavaScript.png" alt="JavaScript" />
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //web -->
+
+        <div class="tab-work" data-content="artwork">
+            <section class="sub-artwork-section">
+                <div class="container">
+                    <div class="sub-artwork">
+                        <img class="artwork-bg" src="../img/sub_artwork/artwork_1-1.png" alt="" />
+
+                        <a
+                            href="#"
+                            class="artwork-poster-thumb modal-thumb"
+                            data-image="../img/sub_artwork/artwork.png"
+                        >
+                            <img src="../img/sub_artwork/artwork_2-1.png" alt="" />
+                        </a>
+
+                        <img class="artwork-woman" src="../img/sub_artwork/artwork_3-1.png" alt="" />
+
+                        <div class="artwork-text">
+                            <h3>About Artwork</h3>
+
+                            <p>
+                                Adobe Illustrator를 활용하여 펜툴의 이해도와<br />
+                                표현력을 높이기 위해 실제 레퍼런스 이미지를<br />
+                                기반으로 아트웍 작업을 진행한 프로젝트입니다.<br />
+                                인물의 윤곽과 디테일을 선 하나하나 직접 그려<br />
+                                원본의 형태와 분위기를 구현했으며, 컬러 또한<br />
+                                원본과 동일하게 표현하여 높은 완성도의<br />
+                                벡터 아트웍으로 제작했습니다.
+                            </p>
+
+                            <h3 class="tool-title">Use Tool</h3>
+
+                            <img class="artwork-tool" src="../img/sub_artwork/Illustrator.png" alt="Illustrator" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //artwork -->
+
+        <section class="contact-section sub-contact-section" id="contact">
+            <div class="container">
+                <div class="contact-inner">
+                    <div class="contact-left">
+                        <h2 class="contact-title" data-text="LET’S WORK TOGETHER">
+                            LET’S<br />
+                            WORK<br />
+                            TOGETHER
+                        </h2>
+
+                        <p>함께 만들어갈 디지털 경험을 기다립니다.</p>
+                    </div>
+
+                    <div class="contact-right">
+                        <div class="contact-info">
+                            <span>E-Mail</span>
+                            <strong>zsoyonx@naver.com</strong>
+                        </div>
+
+                        <div class="contact-info">
+                            <span>Tel</span>
+                            <strong>010 6325 7812</strong>
+                        </div>
+
+                        <div class="contact-icons">
+                            <a href="#"
+                                ><img class="default" src="../icon/con_icon_1.png" alt="kakao" /><img
+                                    class="hover"
+                                    src="../icon/con_icon_5.png"
+                                    alt="kakao hover"
+                            /></a>
+                            <a href="#"
+                                ><img class="default" src="../icon/con_icon_2.png" alt="youtube" /><img
+                                    class="hover"
+                                    src="../icon/con_icon_6.png"
+                                    alt="youtube hover"
+                            /></a>
+                            <a href="#"
+                                ><img class="default" src="../icon/con_icon_3.png" alt="github" /><img
+                                    class="hover"
+                                    src="../icon/con_icon_7.png"
+                                    alt="github hover"
+                            /></a>
+                            <a href="#"
+                                ><img class="default" src="../icon/con_icon_4.png" alt="instagram" /><img
+                                    class="hover"
+                                    src="../icon/con_icon_8.png"
+                                    alt="instagram hover"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //contact -->
+
+        <div class="project-modal">
+            <button type="button" class="project-modal-close">×</button>
+
+            <div class="project-modal-inner">
+                <div class="project-modal-content"></div>
+            </div>
+        </div>
+        <!-- modal -->
+
+        <script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/webgl-fluid"></script>
+
+        <script src="../js/sub.js"></script>
+    </body>
+</html>

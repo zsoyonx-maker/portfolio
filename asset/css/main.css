@@ -12,6 +12,12 @@ html {
     /* scroll-behavior: smooth; */
 }
 
+html.skip-loading .loader {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
 /* .work-grid-section,
 .about,
 .archive-intro,
@@ -247,7 +253,8 @@ html {
 .work-title {
     position: absolute;
     top: 137px;
-    left: 0;
+    right: 0;
+    text-align: right;
 
     font-size: 100px;
     line-height: 1;
@@ -295,7 +302,7 @@ html {
 }
 
 .work-card::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
 
@@ -309,7 +316,7 @@ html {
 }
 
 .work-card::after {
-    content: "All View";
+    content: 'All View';
 
     position: absolute;
     left: 50%;
@@ -581,6 +588,7 @@ html {
 
 .archive-intro-inner {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -590,6 +598,7 @@ html {
     line-height: 60px;
     font-weight: 700;
     color: #222222;
+    text-align: right;
 }
 
 .archive-intro p {
@@ -597,12 +606,13 @@ html {
     line-height: 30px;
     font-weight: 500;
     color: #454545;
+    text-align: left;
 }
 
 .archive-intro-title {
     will-change: transform, opacity;
     opacity: 0;
-    transform: translateX(-120px);
+    transform: translateX(120px);
     transition:
         opacity 1s ease,
         transform 1s cubic-bezier(0.22, 1, 0.36, 1);
@@ -611,7 +621,7 @@ html {
 .archive-intro-sub {
     will-change: transform, opacity;
     opacity: 0;
-    transform: translateX(120px);
+    transform: translateX(-120px);
     transition:
         opacity 1s ease,
         transform 1s cubic-bezier(0.22, 1, 0.36, 1);
@@ -629,6 +639,8 @@ html {
     width: 100%;
     background: #fff;
     padding-bottom: 100px;
+    position: relative;
+    z-index: 2;
 }
 
 .video-title {
@@ -636,12 +648,18 @@ html {
     line-height: 100px;
     font-weight: 700;
     color: #222222;
+    text-align: right;
+    width: fit-content;
+    margin-left: auto;
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
 }
 
 /* video sticky screen */
 .video-section {
     width: 100%;
-    height: 300vh; /* 4~5번 스크롤 고정 */
+    height: 300vh;
     position: relative;
     background: #101010;
 }
@@ -655,6 +673,7 @@ html {
 
     overflow: hidden;
     background: #101010;
+    z-index: 300000;
 }
 
 .video-canvas {
@@ -666,12 +685,19 @@ html {
 
     display: block;
     cursor: grab;
-
-    z-index: 300000;
 }
 
 .video-canvas:active {
     cursor: grabbing;
+}
+
+#screenVideo {
+    position: fixed;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
 }
 
 .video-view-btn {
@@ -694,7 +720,6 @@ html {
     color: #fff;
     text-decoration: none;
 
-    z-index: 300000;
     transition: 0.35s ease;
 }
 
@@ -714,7 +739,7 @@ html {
 }
 
 .archive-project .container::after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 1px;
@@ -781,7 +806,7 @@ html {
 }
 
 .archive-thumb-item::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
 
@@ -795,7 +820,7 @@ html {
 }
 
 .archive-thumb-item::after {
-    content: "All View";
+    content: 'All View';
 
     position: absolute;
     left: 50%;
@@ -1055,6 +1080,128 @@ html {
     opacity: 1;
 }
 
+/* scroll-down */
+.scroll-down {
+    position: fixed;
+    right: 22px;
+    bottom: 20px;
+    width: 28px;
+    height: 90px;
+    z-index: 999999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.scroll-down.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-down.is-hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: scrollMove 3s ease-out infinite;
+}
+
+.scroll-chevron:first-child {
+    animation-delay: 1s;
+}
+
+.scroll-chevron:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.scroll-chevron::before,
+.scroll-chevron::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #a1a1a1;
+}
+
+.scroll-chevron::before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.scroll-chevron::after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+.scroll-text {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.1;
+
+    color: #a1a1a1;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    opacity: 0.5;
+    animation: scrollPulse 2s linear alternate infinite;
+}
+
+.scroll-down.is-white .scroll-chevron::before,
+.scroll-down.is-white .scroll-chevron::after {
+    background: #fff;
+}
+
+.scroll-down.is-white .scroll-text {
+    color: #fff;
+}
+
+@keyframes scrollMove {
+    25% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+@keyframes scrollPulse {
+    to {
+        opacity: 1;
+    }
+}
+
 /* 반응형 */
 @media (max-width: 1200px) {
     .contact-inner {
@@ -1066,6 +1213,7 @@ html {
         padding-top: 0;
     }
 }
+/* contact */
 
 /* 반응형 */
 @media (max-width: 1200px) {

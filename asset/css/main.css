@@ -302,7 +302,7 @@ html.skip-loading .loader {
 }
 
 .work-card::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
 
@@ -316,7 +316,7 @@ html.skip-loading .loader {
 }
 
 .work-card::after {
-    content: 'All View';
+    content: "All View";
 
     position: absolute;
     left: 50%;
@@ -739,7 +739,7 @@ html.skip-loading .loader {
 }
 
 .archive-project .container::after {
-    content: '';
+    content: "";
     display: block;
     width: 100%;
     height: 1px;
@@ -806,7 +806,7 @@ html.skip-loading .loader {
 }
 
 .archive-thumb-item::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
 
@@ -820,7 +820,7 @@ html.skip-loading .loader {
 }
 
 .archive-thumb-item::after {
-    content: 'All View';
+    content: "All View";
 
     position: absolute;
     left: 50%;
@@ -1125,7 +1125,7 @@ html.skip-loading .loader {
 
 .scroll-chevron::before,
 .scroll-chevron::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     height: 100%;

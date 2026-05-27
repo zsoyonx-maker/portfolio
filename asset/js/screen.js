@@ -8,6 +8,10 @@ const videoSection = document.querySelector(".video-section");
 const screenVideo = document.querySelector("#screenVideo");
 
 if (videoCanvas && videoWrap && videoSection && screenVideo) {
+    screenVideo.muted = true;
+    screenVideo.defaultMuted = true;
+    screenVideo.playsInline = true;
+
     const scene = new THREE.Scene();
     scene.background = new THREE.Color("#101010");
 
@@ -105,10 +109,11 @@ if (videoCanvas && videoWrap && videoSection && screenVideo) {
     });
 
     const mouse = { x: 0, y: 0 };
-    let scrollProgress = 1;
-    let currentProgress = 1;
+    let scrollProgress = 0;
+    let currentProgress = 0;
     let videoScrollProgress = 0;
     let videoCanPlay = false;
+    // let videoStarted = false;
 
     window.addEventListener("mousemove", (e) => {
         mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -139,7 +144,7 @@ if (videoCanvas && videoWrap && videoSection && screenVideo) {
         videoScrollProgress = rawProgress;
 
         // 화면 아래쪽으로 video-section이 이 정도 빠지면 영상 멈춤
-        videoCanPlay = rect.bottom > window.innerHeight * 0.42;
+        videoCanPlay = rect.top <= window.innerHeight * 0.2 && rect.bottom > window.innerHeight * 0.42;
     }
 
     function animate() {
@@ -153,7 +158,9 @@ if (videoCanvas && videoWrap && videoSection && screenVideo) {
         // video-section을 어느 정도 지나가면 정지
         if (currentProgress > 0.95 && videoCanPlay) {
             if (screenVideo.paused) {
-                screenVideo.play().catch(() => {});
+                screenVideo.play().catch((err) => {
+                    console.log("video play failed:", err);
+                });
             }
         } else {
             if (!screenVideo.paused) {

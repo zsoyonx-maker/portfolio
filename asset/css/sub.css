@@ -119,7 +119,7 @@ html {
 }
 
 .sub-title-row::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: 0;
@@ -541,35 +541,6 @@ html {
     gap: clamp(18px, 1.8vw, 35px);
 }
 
-/* responsive */
-@media (max-width: 1200px) {
-    .promotion-info h3 {
-        font-size: clamp(26px, 3.5vw, 45px);
-    }
-
-    .promotion-more {
-        font-size: clamp(18px, 2.5vw, 32px);
-    }
-
-    .promotion-desc {
-        font-size: clamp(14px, 1.8vw, 24px);
-    }
-
-    .promotion-color h4,
-    .promotion-tool h4 {
-        font-size: clamp(18px, 2.5vw, 30px);
-    }
-
-    .color-item span {
-        width: clamp(32px, 4vw, 62px);
-        height: clamp(32px, 4vw, 62px);
-    }
-
-    .color-item p {
-        font-size: clamp(10px, 1.3vw, 18px);
-    }
-}
-
 /* sub motion */
 .sub-motion-section {
     width: 100%;
@@ -765,7 +736,7 @@ html {
 }
 
 .motion-info li::before {
-    content: "•";
+    content: '•';
     position: absolute;
     left: 0;
     top: 0;
@@ -809,40 +780,8 @@ html {
     background: #000;
 }
 
-/* responsive */
-@media (max-width: 1400px) {
-    .motion-item {
-        gap: 7vw;
-    }
-
-    .motion-card {
-        width: 40.8434vw;
-        min-height: auto;
-        border-radius: 2.7vw;
-    }
-
-    .motion-more {
-        font-size: clamp(18px, 1.9286vw, 32px);
-    }
-
-    .motion-card h3,
-    .motion-info h3 {
-        font-size: clamp(20px, 2.1429vw, 30px);
-    }
-
-    .motion-card p,
-    .motion-info li,
-    .motion-keywords span {
-        font-size: clamp(14px, 1.7143vw, 24px);
-    }
-
-    .motion-info p {
-        font-size: clamp(13px, 1.2857vw, 18px);
-    }
-}
-
 /* sub web */
-.tab-work[data-content="web"] {
+.tab-work[data-content='web'] {
     width: 100%;
 }
 
@@ -986,57 +925,6 @@ html {
     height: auto;
 }
 
-/* 반응형 */
-@media (max-width: 1200px) {
-    .web-work-section {
-        padding-top: 70px;
-    }
-
-    .web-work-info {
-        margin-left: 24px;
-    }
-
-    .web-work-desc {
-        line-height: 1.5;
-    }
-
-    .web-tool-list {
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 768px) {
-    .web-work-section {
-        padding-top: 50px;
-    }
-
-    .web-work-item {
-        flex-direction: column;
-    }
-
-    .web-work-info {
-        margin-left: 0;
-        margin-top: 30px;
-    }
-
-    .web-site-btn {
-        margin-top: 18px;
-    }
-
-    .web-work-desc {
-        margin-top: 24px;
-    }
-
-    .web-color-list {
-        gap: 24px;
-    }
-
-    .web-tool-list {
-        gap: 14px;
-    }
-}
-
 /* artwork */
 /* sub artwork */
 .sub-artwork-section {
@@ -1152,7 +1040,7 @@ html {
 }
 
 .sub-contact-section::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 50%;
     top: 0;
@@ -1446,8 +1334,85 @@ html {
     max-height: none;
 }
 
-/* responsive */
+/* *****미디어쿼리***** */
+@media (max-width: 1400px) {
+    .motion-item {
+        gap: 7vw;
+    }
+
+    .motion-card {
+        width: 40.8434vw;
+        min-height: auto;
+        border-radius: 2.7vw;
+    }
+
+    .motion-more {
+        font-size: clamp(18px, 1.9286vw, 32px);
+    }
+
+    .motion-card h3,
+    .motion-info h3 {
+        font-size: clamp(20px, 2.1429vw, 30px);
+    }
+
+    .motion-card p,
+    .motion-info li,
+    .motion-keywords span {
+        font-size: clamp(14px, 1.7143vw, 24px);
+    }
+
+    .motion-info p {
+        font-size: clamp(13px, 1.2857vw, 18px);
+    }
+    /* motion */
+}
+
 @media (max-width: 1200px) {
+    .promotion-info h3 {
+        font-size: clamp(26px, 3.5vw, 45px);
+    }
+
+    .promotion-more {
+        font-size: clamp(18px, 2.5vw, 32px);
+    }
+
+    .promotion-desc {
+        font-size: clamp(14px, 1.8vw, 24px);
+    }
+
+    .promotion-color h4,
+    .promotion-tool h4 {
+        font-size: clamp(18px, 2.5vw, 30px);
+    }
+
+    .color-item span {
+        width: clamp(32px, 4vw, 62px);
+        height: clamp(32px, 4vw, 62px);
+    }
+
+    .color-item p {
+        font-size: clamp(10px, 1.3vw, 18px);
+    }
+    /* promotion */
+
+    .web-work-section {
+        padding-top: 70px;
+    }
+
+    .web-work-info {
+        margin-left: 24px;
+    }
+
+    .web-work-desc {
+        line-height: 1.5;
+    }
+
+    .web-tool-list {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+    /* web */
+
     .artwork-text {
         left: 4vw;
         bottom: 4vw;
@@ -1464,4 +1429,37 @@ html {
     .artwork-tool {
         max-width: clamp(42px, 5vw, 80px);
     }
+    /* artwork */
+}
+
+@media (max-width: 768px) {
+    .web-work-section {
+        padding-top: 50px;
+    }
+
+    .web-work-item {
+        flex-direction: column;
+    }
+
+    .web-work-info {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .web-site-btn {
+        margin-top: 18px;
+    }
+
+    .web-work-desc {
+        margin-top: 24px;
+    }
+
+    .web-color-list {
+        gap: 24px;
+    }
+
+    .web-tool-list {
+        gap: 14px;
+    }
+    /* web */
 }
